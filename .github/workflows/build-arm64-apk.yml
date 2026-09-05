@@ -117,6 +117,12 @@ jobs:
         run: |
           echo "${{ secrets.RELEASE_STORE_FILE }}" | base64 --decode > app/keystore.jks
           ls -l app/keystore.jks
+          
+      # 修改软件包名
+      - name: Change application ID
+        run: |
+          NEW_ID="io.github.xiaohao.localdream"
+          sed -i 's/applicationId = ".*"/applicationId = "'$NEW_ID'"/' app/build.gradle.kts
 
       - name: Build release APK
         run: |
