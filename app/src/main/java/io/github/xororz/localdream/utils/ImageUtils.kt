@@ -248,10 +248,10 @@ suspend fun saveImage(context: Context, bitmap: Bitmap, onSuccess: () -> Unit, o
 
             // Save as JPEG if width or height is greater than 1024, otherwise save as PNG
             val isLargeImage = bitmap.width > 1024 || bitmap.height > 1024
-            val format = if (isLargeImage) Bitmap.CompressFormat.JPEG else Bitmap.CompressFormat.PNG
-            val extension = if (isLargeImage) "jpg" else "png"
-            val mimeType = if (isLargeImage) "image/jpeg" else "image/png"
-            val quality = if (isLargeImage) 95 else 100
+            val format = if (isLargeImage) Bitmap.CompressFormat.PNG else Bitmap.CompressFormat.PNG
+            val extension = if (isLargeImage) "png" else "png"
+            val mimeType = if (isLargeImage) "image/png" else "image/png"
+            val quality = if (isLargeImage) 100 else 100
 
             Log.d("SaveImage", "Save format: ${if (isLargeImage) "JPEG" else "PNG"}")
 
