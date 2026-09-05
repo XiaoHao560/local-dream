@@ -9,6 +9,9 @@ jobs:
   build-and-release:
     runs-on: ubuntu-24.04
     timeout-minutes: 20
+    
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout your project
